@@ -94,6 +94,7 @@ sshpass -p "$current_password" ssh -t "zansin@${control_ip}" << EOF
     echo "Waiting for other software managers to finish..."
     sleep 10
   done
+  echo "$current_password" | sudo -S add-apt-repository -y ppa:deadsnakes/ppa
   echo "$current_password" | sudo -S apt-get update
   echo "$current_password" | sudo -S apt-get install -y python3.10 python3.10-venv python3.10-dev python3-pip
   echo "$current_password" | sudo -S apt install -y carton nmap nikto
