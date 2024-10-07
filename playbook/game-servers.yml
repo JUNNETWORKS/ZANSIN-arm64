@@ -3,6 +3,7 @@
   hosts: training-machine
   remote_user: zansin
   become: yes
+  gather_facts: yes
   vars:
     hostname: training-machine
     ansible_ssh_user: zansin
